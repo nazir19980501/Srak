@@ -1,0 +1,107 @@
+{% load static tailwind_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply - {{ university.name }}</title>
+
+    {% tailwind_css %}
+</head>
+
+<body class="bg-slate-100 min-h-screen flex items-center justify-center p-4">
+
+    <div class="bg-white w-full max-w-lg rounded-xl shadow-lg p-8">
+
+        <h1 class="text-3xl font-bold text-center mb-2">
+            Apply Now
+        </h1>
+
+        <p class="text-center text-gray-500 mb-8">
+            {{ university.name }}
+        </p>
+
+        <form method="POST" class="space-y-4">
+            {% csrf_token %}
+
+            <div>
+                <label class="block mb-1 text-sm font-medium">
+                    First Name
+                </label>
+                <input
+                    type="text"
+                    name="first_name"
+                    required
+                    class="w-full border rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                >
+            </div>
+
+            <div>
+                <label class="block mb-1 text-sm font-medium">
+                    Last Name
+                </label>
+                <input
+                    type="text"
+                    name="last_name"
+                    required
+                    class="w-full border rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                >
+            </div>
+
+            <div>
+                <label class="block mb-1 text-sm font-medium">
+                    Age
+                </label>
+                <input
+                    type="number"
+                    name="age"
+                    required
+                    min="15"
+                    class="w-full border rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                >
+            </div>
+
+            <div>
+                <label class="block mb-1 text-sm font-medium">
+                    Email
+                </label>
+                <input
+                    type="email"
+                    name="email"
+                    required
+                    class="w-full border rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                >
+            </div>
+
+            <div>
+                <label class="block mb-1 text-sm font-medium">
+                    Phone Number
+                </label>
+                <input
+                    type="text"
+                    name="phone_number"
+                    required
+                    placeholder="+93 700 123 456"
+                    class="w-full border rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                >
+            </div>
+
+            <button
+                type="submit"
+                class="w-full tracking-wide uppercase bg-black text-white py-3 rounded-lg hover:bg-blue-700 transition duration-300"
+            >
+                Submit Application
+            </button>
+        </form>
+
+        <a
+            href="{% url 'home' %}"
+            class="block text-center mt-4 text-gray-500 hover:text-gray-700"
+        >
+            ← Back
+        </a>
+
+    </div>
+
+</body>
+</html>

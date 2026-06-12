@@ -1,0 +1,29 @@
+ {% load static %}
+ <div class="relative group">
+        <img src="{{ university.image.url }}"  class="">
+        <div class="p-2 px-4 absolute bottom-0 right-0 left-0
+         bg-black/60 text-white opacity-0 flex group-hover:opacity-100 group-hover:bg-opacity-40 
+         justify-between transition-all duration-500">
+        <div class="text-container">
+    <p class="text-sm font-semibold">{{ university.name }}</p>
+
+    <p class="text-sm flex items-center gap-1">
+        <svg xmlns="http://www.w3.org/2000/svg"
+             class="w-4 h-4"
+             viewBox="0 0 24 24"
+             fill="currentColor">
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/>
+        </svg>
+
+        <span>{{ university.country }}, {{ university.city }}</span>
+    </p>
+</div>
+         <div class="flex items-center">
+         <a href="{% url 'apply' university.id %}"
+   class="px-2 py-1 text-sm uppercase border tracking-wide
+          hover:bg-white hover:text-black border-white rounded-sm">
+    Apply Now
+</a>
+         </div>
+        </div>
+      </div>
