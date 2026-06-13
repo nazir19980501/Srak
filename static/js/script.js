@@ -3,6 +3,7 @@ const open = document.getElementById("open")
 const close = document.getElementById("close")
 const nav = document.getElementById("nav")
 const abt = document.getElementById("abt")
+const apl = document.getElementById("apl")
 
 mobile.addEventListener("click", function () {
   open.classList.toggle("hidden")
@@ -47,6 +48,13 @@ window.addEventListener("scroll", () => {
 
 
 abt.addEventListener("click", () => {
+  nav.classList.toggle("hidden")
+  open.classList.toggle("hidden")
+  close.classList.toggle("hidden")
+});
+
+
+apl.addEventListener("click", () => {
   nav.classList.toggle("hidden")
   open.classList.toggle("hidden")
   close.classList.toggle("hidden")
