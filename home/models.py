@@ -5,6 +5,8 @@ class University(models.Model):
     country = models.CharField(max_length=200)
     city = models.CharField(max_length=200)
     image = models.ImageField(upload_to="universities", blank=True, null=True)
+    # establshed = models.DateTimeField(null=True)
+    # students = models.CharField(max_length=20)
 
     def __str__(self):
         return self.name
