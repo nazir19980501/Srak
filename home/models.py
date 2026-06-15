@@ -2,11 +2,19 @@ from django.db import models
 
 class University(models.Model):
     name = models.CharField(max_length=200)
-    country = models.CharField(max_length=200)
-    city = models.CharField(max_length=200)
-    image = models.ImageField(upload_to="universities", blank=True, null=True)
-    # establshed = models.DateTimeField(null=True)
-    # students = models.CharField(max_length=20)
+    country = models.CharField(max_length=100)
+    city = models.CharField(max_length=100)
+    image = models.ImageField(upload_to='universities/', null=True)
+    description = models.TextField(blank=True, null=True)
+
+    established_year = models.PositiveIntegerField(
+        null=True,
+        blank=True
+    )
+    number_of_students = models.PositiveIntegerField(
+        null=True,
+        blank=True
+    )
 
     def __str__(self):
         return self.name

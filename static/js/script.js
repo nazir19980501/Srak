@@ -35,7 +35,6 @@ window.addEventListener("scroll", () => {
       "top-0",
       "left-0",
       "right-0",
-      "z-50",
       "backdrop-blur-md",
       "bg-black/70",
       "shadow-lg",

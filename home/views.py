@@ -50,7 +50,7 @@ def apply_view(request, university_id):
                         Phone Number: {data['phone_number']}
                 """,
                 from_email=None,
-                recipient_list=['srakconsultancy@gmail.com'],
+                recipient_list=['nazirsherzad12345@gmail.com'],
                 fail_silently=False,
             )
 
@@ -63,3 +63,18 @@ def apply_view(request, university_id):
         'form': form,
         'university': university,
     })
+
+
+def university_detail(request, pk):
+    university = get_object_or_404(
+        University,
+        pk=pk
+    )
+
+    return render(
+        request,
+        'home/university_detail.html',
+        {
+            'university': university,
+        }
+    )
