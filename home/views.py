@@ -18,6 +18,7 @@ def homeViwe(request):
 
 
 def apply_view(request, university_id):
+    print('aplly')
     university = get_object_or_404(
         University,
         id=university_id
