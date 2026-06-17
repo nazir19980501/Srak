@@ -6,7 +6,6 @@ import traceback
 
 
 def homeViwe(request):
-    print('hello')
     universities = University.objects.all()
     return render(request,'home/home.html', {
         "universities": universities
@@ -19,7 +18,6 @@ def homeViwe(request):
 
 
 def apply_view(request, university_id):
-    print('aplly')
     university = get_object_or_404(
         University,
         id=university_id
