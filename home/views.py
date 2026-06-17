@@ -6,6 +6,7 @@ import traceback
 
 
 def homeViwe(request):
+    print('hello')
     universities = University.objects.all()
     return render(request,'home/home.html', {
         "universities": universities
