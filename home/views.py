@@ -49,7 +49,7 @@ def apply_view(request, university_id):
                         Email: {data['email']}
                         Phone Number: {data['phone_number']}
                 """,
-                from_email=None,
+                from_email='resetdjango8@gmail.com',
                 recipient_list=['srakconsultancy@gmail.com'],
                 fail_silently=False,
             )
