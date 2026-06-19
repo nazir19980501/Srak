@@ -5,6 +5,53 @@ const nav = document.getElementById("nav")
 const abt = document.getElementById("abt")
 const apl = document.getElementById("apl")
 
+
+
+
+const jet = document.getElementById("jet-cursor");
+
+
+let mouseX = window.innerWidth / 2;
+let mouseY = window.innerHeight / 2;
+
+let jetX = mouseX;
+let jetY = mouseY;
+
+let angle = 0;
+const trail = [];
+
+document.addEventListener("mousemove", (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+});
+
+function animate() {
+
+    /* Smooth follow */
+    jetX += (mouseX - jetX) * 0.15;
+    jetY += (mouseY - jetY) * 0.15;
+
+    /* Direction */
+    const dx = mouseX - jetX;
+    const dy = mouseY - jetY;
+
+    angle = Math.atan2(dy, dx);
+
+    /* Position plane */
+    jet.style.left = `${jetX}px`;
+    jet.style.top = `${jetY}px`;
+
+    jet.style.transform =
+        `translate(-50%, -50%) rotate(${angle}rad)`;
+
+    
+
+    requestAnimationFrame(animate);
+}
+
+animate();
+
+
 mobile.addEventListener("click", function () {
   open.classList.toggle("hidden")
   close.classList.toggle("hidden")
