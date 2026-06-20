@@ -28,7 +28,8 @@ DEBUG = True
 ALLOWED_HOSTS = [
     ".onrender.com",
     "localhost",
-    "127.0.0.1"
+    "127.0.0.1",
+    "'nazir19998.pythonanywhere.com'"
 ]
 
 
